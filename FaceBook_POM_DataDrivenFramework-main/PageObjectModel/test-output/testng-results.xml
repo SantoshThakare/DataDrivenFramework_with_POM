@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-09-29T09:13:53 IST" name="Default suite" finished-at="2022-09-29T09:14:48 IST" duration-ms="54966">
+    <groups>
+    </groups>
+    <test started-at="2022-09-29T09:13:53 IST" name="Default test" finished-at="2022-09-29T09:14:48 IST" duration-ms="54966">
+      <class name="Test.LoginPageTest">
+        <test-method is-config="true" signature="triggerDriver()[pri:0, instance:Test.LoginPageTest@72437d8d]" started-at="2022-09-29T09:13:53 IST" name="triggerDriver" finished-at="2022-09-29T09:13:59 IST" duration-ms="5903" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- triggerDriver -->
+        <test-method signature="validLoginPagewithConfigDataTest()[pri:1, instance:Test.LoginPageTest@72437d8d]" started-at="2022-09-29T09:13:59 IST" name="validLoginPagewithConfigDataTest" finished-at="2022-09-29T09:14:05 IST" duration-ms="6044" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validLoginPagewithConfigDataTest -->
+        <test-method is-config="true" signature="terminateDriver()[pri:0, instance:Test.LoginPageTest@72437d8d]" started-at="2022-09-29T09:14:05 IST" name="terminateDriver" finished-at="2022-09-29T09:14:12 IST" duration-ms="7244" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateDriver -->
+        <test-method is-config="true" signature="triggerDriver()[pri:0, instance:Test.LoginPageTest@72437d8d]" started-at="2022-09-29T09:14:12 IST" name="triggerDriver" finished-at="2022-09-29T09:14:18 IST" duration-ms="5973" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- triggerDriver -->
+        <test-method signature="validLoginPageWithXlsxDataTest()[pri:2, instance:Test.LoginPageTest@72437d8d]" started-at="2022-09-29T09:14:18 IST" name="validLoginPageWithXlsxDataTest" finished-at="2022-09-29T09:14:25 IST" duration-ms="6488" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validLoginPageWithXlsxDataTest -->
+        <test-method is-config="true" signature="terminateDriver()[pri:0, instance:Test.LoginPageTest@72437d8d]" started-at="2022-09-29T09:14:25 IST" name="terminateDriver" finished-at="2022-09-29T09:14:32 IST" duration-ms="7168" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateDriver -->
+        <test-method is-config="true" signature="triggerDriver()[pri:0, instance:Test.LoginPageTest@72437d8d]" started-at="2022-09-29T09:14:32 IST" name="triggerDriver" finished-at="2022-09-29T09:14:37 IST" duration-ms="5057" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- triggerDriver -->
+        <test-method signature="validateInvalidLoginCred()[pri:3, instance:Test.LoginPageTest@72437d8d]" started-at="2022-09-29T09:14:37 IST" name="validateInvalidLoginCred" finished-at="2022-09-29T09:14:41 IST" duration-ms="3677" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateInvalidLoginCred -->
+        <test-method is-config="true" signature="terminateDriver()[pri:0, instance:Test.LoginPageTest@72437d8d]" started-at="2022-09-29T09:14:41 IST" name="terminateDriver" finished-at="2022-09-29T09:14:48 IST" duration-ms="7349" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateDriver -->
+      </class> <!-- Test.LoginPageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -1,0 +1,157 @@
+<html>
+<head>
+<title>TestNG:  Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>10/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Sep 28 21:52:42 IST 2022</td>
+</tr>
+<tr><td>Total time:</td><td>116 seconds (116998 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Test.FindFriendTest.FriendFindPost()'><b>FriendFindPost</b><br>Test class: Test.FindFriendTest</td>
+<td></td>
+<td>7</td>
+<td>Test.FindFriendTest@7d373bcf</td></tr>
+<tr>
+<td title='Test.Browser.Login()'><b>Login</b><br>Test class: Test.Browser</td>
+<td></td>
+<td>1</td>
+<td>Test.Browser@5dda6f9</td></tr>
+<tr>
+<td title='Test.WatchVideoTest.WatchPost()'><b>WatchPost</b><br>Test class: Test.WatchVideoTest</td>
+<td></td>
+<td>10</td>
+<td>Test.WatchVideoTest@352c308</td></tr>
+<tr>
+<td title='Test.TestAnnotations.test()'><b>test</b><br>Test class: Test.TestAnnotations<br/>
+<a href="#Output-275754769" onClick='toggleBox("Output-275754769", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-275754769" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-275754769">
+Test<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>Test.TestAnnotations@37fbe4a8</td></tr>
+<tr>
+<td title='Test.TestAnnotations.test2()'><b>test2</b><br>Test class: Test.TestAnnotations<br/>
+<a href="#Output-1002041276" onClick='toggleBox("Output-1002041276", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1002041276" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1002041276">
+Test2<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>Test.TestAnnotations@37fbe4a8</td></tr>
+<tr>
+<td title='Test.TestAnnotations.test3()'><b>test3</b><br>Test class: Test.TestAnnotations<br/>
+<a href="#Output-1202081661" onClick='toggleBox("Output-1202081661", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1202081661" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1202081661">
+Test3<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>Test.TestAnnotations@37fbe4a8</td></tr>
+<tr>
+<td title='Test.TestAnnotations.test3()'><b>test3</b><br>Test class: Test.TestAnnotations<br/>
+<a href="#Output-1989332276" onClick='toggleBox("Output-1989332276", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1989332276" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1989332276">
+Test3<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>Test.TestAnnotations@37fbe4a8</td></tr>
+<tr>
+<td title='Test.LoginPageTest.validLoginPageWithXlsxDataTest()'><b>validLoginPageWithXlsxDataTest</b><br>Test class: Test.LoginPageTest</td>
+<td></td>
+<td>9</td>
+<td>Test.LoginPageTest@6d6bc158</td></tr>
+<tr>
+<td title='Test.LoginPageTest.validLoginPagewithConfigDataTest()'><b>validLoginPagewithConfigDataTest</b><br>Test class: Test.LoginPageTest</td>
+<td></td>
+<td>6</td>
+<td>Test.LoginPageTest@6d6bc158</td></tr>
+<tr>
+<td title='Test.LoginPageTest.validateInvalidLoginCred()'><b>validateInvalidLoginCred</b><br>Test class: Test.LoginPageTest</td>
+<td></td>
+<td>3</td>
+<td>Test.LoginPageTest@6d6bc158</td></tr>
+</table><p>
+</body>
+</html>
