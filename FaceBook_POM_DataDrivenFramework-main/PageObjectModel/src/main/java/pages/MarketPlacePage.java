@@ -41,5 +41,4 @@ public class MarketPlacePage extends LoginPage{
 
 		}
 	}
-
 }

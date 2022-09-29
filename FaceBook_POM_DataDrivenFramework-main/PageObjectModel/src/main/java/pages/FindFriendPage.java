@@ -10,7 +10,6 @@ public class FindFriendPage extends LoginPage {
 	WebElement findfriedbtn;
 	@FindBy(xpath = "//span[text()='Suggestions']")
 	WebElement suggestionsbtn;
-	
 	/**
 	 * Method: To Find Friend in facebook
 	 */
@@ -30,7 +29,6 @@ public class FindFriendPage extends LoginPage {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-
 		}
 	}
 }

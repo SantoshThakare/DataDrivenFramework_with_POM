@@ -57,6 +57,5 @@ public class WatchVideosPage extends LoginPage  {
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
-		
 	}
 }
