@@ -115,7 +115,6 @@ public class utility extends Base {
 			log.info("start capturing Screenshort");
 			
 		Date dates=new Date(); 
-		//print actual date
 		String date0=dates.toString();
 		System.out.println("Date is:" +date0);
 		String date1=date0.replaceAll(":", "_");
