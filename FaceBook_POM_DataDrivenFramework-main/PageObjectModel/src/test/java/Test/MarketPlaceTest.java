@@ -13,8 +13,6 @@ public class MarketPlaceTest extends Base{
 	public MarketPlaceTest() {
 		super();
 	}
-	
-	
 	final static Logger log = Logger.getLogger(MarketPlaceTest.class);
 	@BeforeMethod
 	public void triggerDriver() {

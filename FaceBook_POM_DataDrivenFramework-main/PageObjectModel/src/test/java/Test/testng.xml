@@ -9,6 +9,6 @@
       <class name="Test.FindFriendTest"/>
       <class name="Test.LoginPageTest"/>
       <class name="Test.Browser"/>
-    </classes>
+    </classes> 
   </test> <!-- Test -->
 </suite> <!-- Suite -->

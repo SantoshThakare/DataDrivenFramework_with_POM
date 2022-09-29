@@ -69,6 +69,7 @@ public class TestAnnotations {
 	public void  test3() {
 		System.out.println("Test3");
 		Reporter.log("Test3",true);
+	
 	}
 }
 

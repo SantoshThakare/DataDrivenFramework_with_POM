@@ -14,8 +14,6 @@ public class WatchVideoTest extends Base{
 	public WatchVideoTest() {
 		super();
 	}
-	
-	
 	final static Logger log = Logger.getLogger(WatchVideoTest.class);
 	@BeforeMethod
 	public void triggerDriver() {

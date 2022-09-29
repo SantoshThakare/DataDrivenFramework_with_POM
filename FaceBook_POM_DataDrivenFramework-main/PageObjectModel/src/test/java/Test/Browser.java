@@ -19,7 +19,6 @@ public class Browser extends Base {
 		WebDriverManager.chromedriver().setup();
 		WebDriverManager.firefoxdriver().setup();
 	}
-	
 	/**
 	 * Method: To Run Initialize method before running each Testcases
 	 */

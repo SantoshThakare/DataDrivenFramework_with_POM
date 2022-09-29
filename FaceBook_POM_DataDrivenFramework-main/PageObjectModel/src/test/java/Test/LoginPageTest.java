@@ -22,7 +22,7 @@ public class LoginPageTest extends Base {
 	final static Logger log = Logger.getLogger(LoginPageTest.class);
 
 	/**
-	 * Method: To Run Initialize method before running each Testcases and To Open
+	 *  To Run Initialize method before running each Testcases and To Open
 	 * browser
 	 */
 	@BeforeMethod
@@ -37,7 +37,7 @@ public class LoginPageTest extends Base {
 	}
 
 	/**
-	 * Method: To Test Login Page is working or not using config file
+	 *  To Test Login Page is working or not using config file
 	 */
 
 	@Test(priority = 1)
@@ -54,7 +54,7 @@ public class LoginPageTest extends Base {
 
 	
 	/**
-	 * Method: To Test Login Page is working or not using XLSX file
+	 *	To Test Login Page is working or not using XLSX file
 	 */
 
 

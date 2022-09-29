@@ -41,7 +41,6 @@ public class FindFriendTest extends Base{
 	public void terminateDriver() {
 		log.info("*End Test Case*");
 		try {
-
 			Thread.sleep(4000);
 			util.closedriver();
 
