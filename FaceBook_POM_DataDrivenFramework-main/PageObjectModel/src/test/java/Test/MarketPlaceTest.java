@@ -1,19 +1,26 @@
 package Test;
 
+import static org.testng.Assert.assertEquals;
+
 import org.apache.log4j.Logger;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import Log4j.log4j_pattern_layout;
 import Utility.utility;
 import base.Base;
 import pages.MarketPlacePage;
 
+@Listeners(Utility.Listener.class)
 public class MarketPlaceTest extends Base{
 	public MarketPlaceTest() {
 		super();
 	}
-	final static Logger log = Logger.getLogger(MarketPlaceTest.class);
+	
+    final static Logger log = Logger.getLogger(log4j_pattern_layout.class);
+
 	@BeforeMethod
 	public void triggerDriver() {
 		try {
@@ -33,6 +40,8 @@ public class MarketPlaceTest extends Base{
 
 		marketplace = new MarketPlacePage();
 		marketplace.userMarketPlace();
+		String homePageTitle = marketplace.verifyHomePage();
+		assertEquals(homePageTitle, "Facebook Marketplace | Facebook");
 		
 	}
 	

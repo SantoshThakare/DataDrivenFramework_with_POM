@@ -2,13 +2,14 @@ package Test;
 
 import org.apache.log4j.Logger;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import Utility.utility;
 import base.Base;
 import pages.FindFriendPage;
 
-
+@Listeners(Utility.Listener.class)
 public class FindFriendTest extends Base{
 	public FindFriendTest() {
 		super();

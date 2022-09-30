@@ -10,44 +10,48 @@ import org.testng.annotations.Test;
 
 import Utility.utility;
 import base.Base;
-import pages.FindFriendPage;
-import pages.WatchVideosPage;
+import pages.LoginPage;
+import pages.ProfilePage;
 
 @Listeners(Utility.Listener.class)
-public class WatchVideoTest extends Base{
-	public WatchVideoTest() {
+public class ProfilePageTest extends Base {
+
+	public ProfilePageTest() {
 		super();
 	}
-	final static Logger log = Logger.getLogger(WatchVideoTest.class);
+	final static Logger log = Logger.getLogger(ProfilePageTest.class);
+
+	/**
+	 * To Run Initialize method before running each Testcases
+	 */
 	@BeforeMethod
 	public void triggerDriver() {
 		try {
-			
-			log.info("* Starting browser  *");
-
 			utility.intilization(prop.getProperty("browser"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 	}
+	/**
+	 * To upload profile picture in facebook
+	 */
 	@Test
-	public void WatchPost() {
+	public void UploadProfileImage() {
+		profile = new ProfilePage();
+		profile.uploadUserProfileImage();
 		
-		log.info("* Start case watch videos *");
-
-		watchvideo = new WatchVideosPage();
-		watchvideo.userWatchVideos();
-		String homePageTitle = watchvideo.verifyHomePage();
-		assertEquals(homePageTitle, "Watch | Facebook");
+		String homePageTitle = profile.verifyHomePage();
+		assertEquals(homePageTitle, "Santosh Thakare | Facebook");
 	}
 	
-	
-	
+	/**
+	 * To Run Terminate method after running each Testcases
+	 */
+
 	@SuppressWarnings("static-access")
 	@AfterMethod
 	public void terminateDriver() {
-		log.info("*End Test Case*");
 		try {
 
 			Thread.sleep(4000);

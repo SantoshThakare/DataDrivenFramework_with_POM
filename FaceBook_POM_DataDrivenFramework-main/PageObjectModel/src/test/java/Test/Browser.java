@@ -2,17 +2,22 @@ package Test;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import Utility.utility;
 import base.Base;
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+@Listeners(Utility.Listener.class)
 public class Browser extends Base {
+	
+	final static Logger log = Logger.getLogger(Browser.class);
 
 	static {
 
