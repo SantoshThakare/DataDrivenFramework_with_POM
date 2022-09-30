@@ -24,6 +24,9 @@ public class MarketPlacePage extends LoginPage{
 			homebtn.click();
 			marketplacebtnbtn.click();
 			driver.manage().timeouts().implicitlyWait(160, TimeUnit.SECONDS);
+
+			
+			
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			for (int i = 1; i < 10; i++) {
 			//scroll down on the webpage
@@ -35,6 +38,9 @@ public class MarketPlacePage extends LoginPage{
 			js.executeScript("window.scrollBy(0, -1000)");
 			Thread.sleep(3000);
 			}
+			homebtn.click();
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
 
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -42,7 +42,7 @@ public class LoginPage extends Base {
 	}
 
 	/**
-	 * Method: To verify Home Page Title with Config data
+	 *To verify Home Page Title with Config data
 	 */
 	public void LoginUser() {
 		try {
@@ -79,7 +79,7 @@ public class LoginPage extends Base {
 		}
 	}
 	/**
-	 * Method: To verify Error message while entering Invalid credentials
+	 * To verify Error message while entering Invalid credentials
 	 */
 	public String validateInvalidLoginCred() {
 		try {

@@ -10,6 +10,8 @@ public class WatchVideosPage extends LoginPage  {
 		
 	@FindBy(xpath = "//span[text()='Watch']")
 	WebElement watchbtn;
+	@FindBy(xpath = "//div [@id=\"watch_feed\"]")
+	WebElement clickwatchbtn;
 	/**
 	 *  To Watch Video in facebook
 	 */
@@ -27,35 +29,24 @@ public class WatchVideosPage extends LoginPage  {
 			driver.manage().timeouts().implicitlyWait(140, TimeUnit.SECONDS);
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			for (int i = 1; i < 10; i++) {
-			//scroll down on the webpage
 			js.executeScript("window.scrollBy(0, 1000)");
 			Thread.sleep(3000);
 			}
 			for (int i = 1; i < 10; i++) {
-			//scroll up on the webpage
-			js.executeScript("window.scrollBy(0, -1000)");
+ 			js.executeScript("window.scrollBy(0, -1000)");
 			Thread.sleep(3000);
 			}
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			clickwatchbtn.click();
+			driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+			Thread.sleep(4000);
+			homebtn.click();
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
 
 		} catch (Exception e) {
 
 		}
 	}
-		public void userScrollUpDown() {
-			try {
-				JavascriptExecutor js = (JavascriptExecutor) driver;
-				for (int i = 1; i < 10; i++) {
-				//scroll down on the webpage
-				js.executeScript("window.scrollBy(0, 1000)");
-				Thread.sleep(3000);
-				}
-				for (int i = 1; i < 10; i++) {
-				//scroll up on the webpage
-				js.executeScript("window.scrollBy(0, -1000)");
-				Thread.sleep(3000);
-				}
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
-	}
+	
 }
