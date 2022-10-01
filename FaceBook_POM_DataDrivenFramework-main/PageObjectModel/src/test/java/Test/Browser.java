@@ -48,7 +48,7 @@ public class Browser extends Base {
 	}
 
 	/**
-	 * Method: To 
+	 * Method: To use  excel reader
 	 */
 	@Test
 	public void Login() {

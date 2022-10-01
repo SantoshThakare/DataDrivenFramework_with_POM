@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import Log4j.log4j_pattern_layout;
 import Utility.utility;
 import base.Base;
 import pages.UploadProfileVideoPage;
@@ -18,7 +19,7 @@ public class UploadProfileVideoTest extends Base{
 	public UploadProfileVideoTest() {
 		super();
 	}
-	final static Logger log = Logger.getLogger(UploadProfileVideoTest.class);
+	final static Logger log = Logger.getLogger(log4j_pattern_layout.class);
 
 	/**To Run Initialize method before running each Testcases
 	 * 
@@ -40,7 +41,7 @@ public class UploadProfileVideoTest extends Base{
 	public void uploadImagePost() {
 		uploadprofilevideo=new UploadProfileVideoPage();
 		uploadprofilevideo.userHomepageImagePost();
-		String homePageTitle = profile.verifyHomePage();
+		String homePageTitle = uploadprofilevideo.verifyHomePage();
 		assertEquals(homePageTitle, "Facebook");
 	}
 	
@@ -52,7 +53,7 @@ public class UploadProfileVideoTest extends Base{
 	public void uploadVideoPost() {
 		uploadprofilevideo=new UploadProfileVideoPage();
 		uploadprofilevideo.userHomePageVideoPost();
-		String homePageTitle = profile.verifyHomePage();
+		String homePageTitle = uploadprofilevideo.verifyHomePage();
 		assertEquals(homePageTitle, "Facebook");
 		
 	}
@@ -66,9 +67,11 @@ public class UploadProfileVideoTest extends Base{
 	public void likePost() {
 		uploadprofilevideo=new UploadProfileVideoPage();
 		uploadprofilevideo.userHomePageLikePost();
-		String homePageTitle = profile.verifyHomePage();
+		String homePageTitle = uploadprofilevideo.verifyHomePage();
 		assertEquals(homePageTitle, "Facebook");
 	}
+	
+	
 	@SuppressWarnings("static-access")
 	@AfterMethod
 	public void terminateDriver() {

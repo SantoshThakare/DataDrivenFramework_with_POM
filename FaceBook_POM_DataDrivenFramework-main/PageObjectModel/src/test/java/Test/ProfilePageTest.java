@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import Log4j.log4j_pattern_layout;
 import Utility.utility;
 import base.Base;
 import pages.LoginPage;
@@ -19,7 +20,7 @@ public class ProfilePageTest extends Base {
 	public ProfilePageTest() {
 		super();
 	}
-	final static Logger log = Logger.getLogger(ProfilePageTest.class);
+	final static Logger log = Logger.getLogger(log4j_pattern_layout.class);
 
 	/**
 	 * To Run Initialize method before running each Testcases
