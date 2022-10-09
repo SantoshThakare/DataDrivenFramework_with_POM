@@ -1,9 +1,15 @@
 package pages;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.Iterator;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -26,16 +32,16 @@ public class FBHomePage extends LoginPage {
 	@FindBy(xpath = "//div [@id=\"watch_feed\"]")
 	WebElement clickwatchbtn;
 
-	@FindBy(xpath ="//span[text()='Santosh Thakare'] [@class=\"b6ax4al1 lq84ybu9 hf30pyar om3e55n1\"]")
+	@FindBy(xpath = "//span[text()='Santosh Thakare']")
 	WebElement profilebtn;
 
-	@FindBy(xpath= "//div[@aria-label='Update profile picture']")
+	@FindBy(xpath = "//div[@aria-label='Update profile picture']")
 	WebElement upldbtn;
 
-	@FindBy(xpath="//div[@aria-label='Upload Photo']")
+	@FindBy(xpath = "//div[@aria-label='Upload Photo']")
 	WebElement uploadphotobtn;
 
-	@FindBy(xpath="//div[@aria-label='Save']")
+	@FindBy(xpath = "//div[@aria-label='Save']")
 	WebElement savebtn;
 
 	@FindBy(xpath = "//span[contains(text(),'Photo/video')]")
@@ -52,16 +58,18 @@ public class FBHomePage extends LoginPage {
 
 	@FindBy(xpath = "(//div[@aria-label='Like'])")
 	WebElement likebtn;
+
 	/**
 	 * Method: To Find Friend in facebook
 	 */
 	public void userFindFriend() {
 		try {
-			emailId.sendKeys(prop.getProperty("emailId"));
-			password.sendKeys(prop.getProperty("password"));
-			loginBtn.click();
+
+			wait.until(ExpectedConditions.visibilityOfAllElements(homebtn));
+			homebtn.click();
 			wait.until(ExpectedConditions.visibilityOfAllElements(findfriedbtn));
 			findfriedbtn.click();
+			wait.until(ExpectedConditions.elementToBeClickable(suggestionsbtn));
 			wait.until(ExpectedConditions.visibilityOfAllElements(suggestionsbtn));
 			suggestionsbtn.click();
 
@@ -70,15 +78,12 @@ public class FBHomePage extends LoginPage {
 		}
 	}
 
-
 	/**
-	 *  To Find Friend in facebook
+	 * To Find Friend in facebook
 	 */
 	public void userMarketPlace() {
 		try {
-			emailId.sendKeys(prop.getProperty("emailId"));
-			password.sendKeys(prop.getProperty("password"));
-			loginBtn.click();
+
 			wait.until(ExpectedConditions.visibilityOfAllElements(marketplacebtnbtn));
 			marketplacebtnbtn.click();
 
@@ -100,17 +105,11 @@ public class FBHomePage extends LoginPage {
 		}
 	}
 
-
 	/**
 	 * To Watch Video in facebook
 	 */
 	public void userWatchVideos() {
 		try {
-			emailId.sendKeys(prop.getProperty("emailId"));
-			password.sendKeys(prop.getProperty("password"));
-
-			wait.until(ExpectedConditions.visibilityOfAllElements(loginBtn));
-			loginBtn.click();
 			wait.until(ExpectedConditions.visibilityOfAllElements(homebtn));
 			homebtn.click();
 			wait.until(ExpectedConditions.visibilityOfAllElements(watchbtn));
@@ -125,17 +124,13 @@ public class FBHomePage extends LoginPage {
 		}
 	}
 
-
-
 	/**
 	 * To Upload profile image of user in facebook
 	 */
 	public void uploadUserProfileImage() {
 		try {
-			emailId.sendKeys(prop.getProperty("emailId"));
-			password.sendKeys(prop.getProperty("password"));
-			wait.until(ExpectedConditions.elementToBeClickable(loginBtn));
-			loginBtn.click();
+			wait.until(ExpectedConditions.visibilityOfAllElements(homebtn));
+			homebtn.click();
 			wait.until(ExpectedConditions.elementToBeClickable(profilebtn));
 			profilebtn.click();
 			wait.until(ExpectedConditions.elementToBeClickable(upldbtn));
@@ -143,24 +138,19 @@ public class FBHomePage extends LoginPage {
 			wait.until(ExpectedConditions.elementToBeClickable(uploadphotobtn));
 			uploadphotobtn.click();
 			Runtime.getRuntime().exec(".\\src\\main\\resources\\repository\\Auto_Profile.exe");
-			wait.until(ExpectedConditions.elementToBeClickable(upldbtn));
+			wait.until(ExpectedConditions.elementToBeClickable(savebtn));
 			savebtn.click();
-
-
-
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-
 	/**
-	 *  To post image in facebook
+	 * To post image in facebook
 	 */
 	public void userHomepageImagePost() {
 		try {
-
 
 			wait.until(ExpectedConditions.elementToBeClickable(homebtn));
 			homebtn.click();
@@ -191,10 +181,6 @@ public class FBHomePage extends LoginPage {
 	public void userHomePageVideoPost() {
 		try {
 
-
-			emailId.sendKeys(prop.getProperty("emailId"));
-			password.sendKeys(prop.getProperty("password"));
-			loginBtn.click();
 			wait.until(ExpectedConditions.visibilityOfAllElements(homebtn));
 			homebtn.click();
 			wait.until(ExpectedConditions.visibilityOfAllElements(photovideobtn));
@@ -218,33 +204,103 @@ public class FBHomePage extends LoginPage {
 
 	/**
 	 * To Like post in facebook
+	 * 
 	 * @throws InterruptedException
 	 *
 	 */
 
 	public void userHomePageLikePost() throws InterruptedException {
 
-		emailId.sendKeys(prop.getProperty("emailId"));
-		password.sendKeys(prop.getProperty("password"));
-		wait.until(ExpectedConditions.visibilityOfAllElements(loginBtn));
-		loginBtn.click();
 		wait.until(ExpectedConditions.visibilityOfAllElements(homebtn));
 		homebtn.click();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		for (int i = 1; i < 5; i++) {
-		js.executeScript("window.scrollBy(0, 100)");
-		Thread.sleep(3000);
+			js.executeScript("window.scrollBy(0, 100)");
+			Thread.sleep(3000);
 		}
 		for (int i = 1; i < 5; i++) {
-		js.executeScript("window.scrollBy(0, 0)");
-		Thread.sleep(3000);
+			js.executeScript("window.scrollBy(0, 0)");
+			Thread.sleep(3000);
 		}
-		homebtn.click();
+
 		wait.until(ExpectedConditions.visibilityOfAllElements(likebtn));
 		likebtn.click();
 		wait.until(ExpectedConditions.visibilityOfAllElements(homebtn));
 	}
 
+	/**
+	 * To post comment in facebook
+	 */
+	public void userHomePageCommentPost() throws InterruptedException {
+		try {
 
+			wait.until(ExpectedConditions.visibilityOfAllElements(homebtn));
+			homebtn.click();
+			wait.until(ExpectedConditions.visibilityOfAllElements(profilebtn));
+			profilebtn.click();
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			for (int i = 1; i < 6; i++) {
+				js.executeScript("window.scrollBy(0, 250)");
+				Thread.sleep(2000);
+			}
+			for (int i = 1; i < 5; i++) {
+				js.executeScript("window.scrollBy(0, 0)");
+				Thread.sleep(2000);
+			}
+
+			wait.until(ExpectedConditions.elementToBeClickable(commentbox));
+			commentbox.sendKeys("Super Hit H Boss");
+
+			Robot robot = new Robot();
+
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		} catch (AWTException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * To post Randomly Comment in facebook
+	 */
+	public void userHomePageRandomCommentPost() throws InterruptedException, AWTException {
+		String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*123456789";
+		StringBuilder sb = new StringBuilder();
+		Random random = new Random();
+		int length = 7;
+
+		for (int i = 0; i < length; i++) {
+			int index = random.nextInt(alphabet.length());
+			char randomChar = alphabet.charAt(index);
+			sb.append(randomChar);
+		}
+		String randomString = sb.toString();
+		System.out.println("Random String is: " + randomString);
+		wait.until(ExpectedConditions.elementToBeClickable(homebtn));
+
+		wait.until(ExpectedConditions.visibilityOfAllElements(homebtn));
+		homebtn.click();
+		wait.until(ExpectedConditions.elementToBeClickable(profilebtn));
+
+		wait.until(ExpectedConditions.visibilityOfAllElements(profilebtn));
+		profilebtn.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		for (int i = 1; i < 5; i++) {
+			js.executeScript("window.scrollBy(0, 250)");
+			Thread.sleep(2000);
+		}
+		for (int i = 1; i < 5; i++) {
+			js.executeScript("window.scrollBy(0, 0)");
+			Thread.sleep(2000);
+		}
+
+		wait.until(ExpectedConditions.elementToBeClickable(commentbox));
+		commentbox.sendKeys(randomString);
+
+		Robot robot = new Robot();
+
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+	}
 
 }
