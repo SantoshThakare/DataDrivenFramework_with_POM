@@ -10,12 +10,13 @@ import org.testng.annotations.Test;
 
 import Log4j.log4j_pattern_layout;
 import Utility.utility;
+import base.Base;
 import pages.FBHomePage;
 import pages.LoginPage;
 
 
 @Listeners(Utility.Listener.class)
-public class FbHomePageTest extends LoginPage {
+public class FbHomePageTest extends Base {
 	public FbHomePageTest() {
 		super();
 	}
@@ -45,7 +46,8 @@ public class FbHomePageTest extends LoginPage {
 	public void FriendFindPost() {
 
 		log.info("* Start case Find Friend  *");
-
+		loginp = new LoginPage();
+		loginp.LoginUserUsingXlsx();
 		FBhome = new FBHomePage();
 		FBhome.userFindFriend();
 		String homePageTitle = FBhome.verifyHomePage();
@@ -61,7 +63,8 @@ public class FbHomePageTest extends LoginPage {
 	public void MarketPlacePost() {
 
 		log.info("* Start case Market Place  Videos *");
-
+		loginp = new LoginPage();
+		loginp.LoginUserUsingXlsx();
 		FBhome = new FBHomePage();
 		FBhome.userMarketPlace();
 		String homePageTitle = FBhome.verifyHomePage();
@@ -76,7 +79,8 @@ public class FbHomePageTest extends LoginPage {
 	public void WatchPost() {
 
 		log.info("* Start case watch videos *");
-
+		loginp = new LoginPage();
+		loginp.LoginUserUsingXlsx();
 		FBhome = new FBHomePage();
 		FBhome.userWatchVideos();
 		String homePageTitle = FBhome.verifyHomePage();
@@ -90,7 +94,8 @@ public class FbHomePageTest extends LoginPage {
 	public void UploadProfileImage() {
 		log.info("* Start case Upload Profile Image  *");
 
-
+		loginp = new LoginPage();
+		loginp.LoginUserUsingXlsx();
 		FBhome = new FBHomePage();
 		FBhome.uploadUserProfileImage();
 
@@ -106,9 +111,8 @@ public class FbHomePageTest extends LoginPage {
 	@Test(priority = 5)
 	public void uploadImagePost() {
 		log.info("* Start case Upload Image  *");
-
 		loginp = new LoginPage();
-		loginp.LoginUser();
+		loginp.LoginUserUsingXlsx();
 		FBhome = new FBHomePage();
 		FBhome.userHomepageImagePost();
 
@@ -125,7 +129,8 @@ public class FbHomePageTest extends LoginPage {
 	@Test(priority = 6)
 	public void uploadVideoPost() {
 		log.info("* Start case Upload Profile Video   *");
-
+		loginp = new LoginPage();
+		loginp.LoginUserUsingXlsx();
 		FBhome = new FBHomePage();
 		FBhome.userHomePageVideoPost();
 		String homePageTitle = FBhome.verifyHomePage();
@@ -143,11 +148,41 @@ public class FbHomePageTest extends LoginPage {
 	public void likePost() throws Exception {
 
 		log.info("* Start case like Post   *");
-
+		loginp = new LoginPage();
+		loginp.LoginUserUsingXlsx();
 		FBhome = new FBHomePage();
 		FBhome.userHomePageLikePost();
 		String homePageTitle = FBhome.verifyHomePage();
 		assertEquals(homePageTitle, "Facebook");
+	}
+	/**
+	 * To post Comment in facebook
+	 *
+	 */
+	@Test(priority = 8)
+	public void CommentPost() throws Exception {
+
+		log.info("* Start case Comment Post   *");
+		loginp = new LoginPage();
+		loginp.LoginUserUsingXlsx();
+		FBhome = new FBHomePage();
+		FBhome.userHomePageCommentPost();
+		String homePageTitle = FBhome.verifyHomePage();
+		assertEquals(homePageTitle, "Santosh Thakare | Facebook");
+	}
+	/**
+	 * To post Randomly Comment in facebook
+	 *
+	 */
+	@Test(priority = 9)
+	public void RandomCommentPost() throws Exception {
+
+		log.info("* Start case Random Comment Post   *");
+		loginp = new LoginPage();
+		loginp.LoginUserUsingXlsx();
+		FBhome = new FBHomePage();
+		FBhome.userHomePageRandomCommentPost();
+		
 	}
 
 	/**
