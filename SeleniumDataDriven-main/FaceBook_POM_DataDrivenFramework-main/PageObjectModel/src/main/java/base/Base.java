@@ -16,6 +16,7 @@ import pages.FindFriendPage;
 import pages.LoginPage;
 import pages.MarketPlacePage;
 import pages.ProfilePage;
+import pages.StatusPage;
 import pages.UploadProfileVideoPage;
 import pages.WatchVideosPage;
 public class Base {
@@ -37,6 +38,7 @@ public class Base {
 	protected static UploadProfileVideoPage uploadprofilevideo;
 	protected static ProfilePage profile;
 	protected static FBHomePage FBhome;
+	protected static StatusPage statuspage;
 	static {
 
 		WebDriverManager.chromedriver().setup();

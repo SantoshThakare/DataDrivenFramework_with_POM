@@ -60,7 +60,6 @@ public class UploadProfileVideoPage extends LoginPage {
 		try {
 			
 			wait.until(ExpectedConditions.elementToBeClickable(homebtn));
-
 			homebtn.click();
 			wait.until(ExpectedConditions.visibilityOfAllElements(photovideobtn));
 			photovideobtn.click();

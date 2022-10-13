@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import Utility.utility;
 import base.Base;
 import pages.FindFriendPage;
+import pages.LoginPage;
 
 @Listeners(Utility.Listener.class)
 public class FindFriendTest extends Base{
@@ -39,7 +40,8 @@ public class FindFriendTest extends Base{
 	public void FriendFindPost() {
 
 		log.info("* Start case Find Friend  *");
-
+		loginp = new LoginPage();
+		loginp.LoginUserUsingXlsx();
 		findpage = new FindFriendPage();
 		findpage .userFindFriend();
 

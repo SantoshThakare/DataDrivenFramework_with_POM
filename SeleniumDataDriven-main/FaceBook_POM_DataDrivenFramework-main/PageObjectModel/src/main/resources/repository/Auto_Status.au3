@@ -1,0 +1,6 @@
+Sleep(3000)
+ControlFocus("Open","","Edit1")
+Sleep(3000)
+ControlSetText("Open","","Edit1","C:\Users\Shree\eclipse-workspace\SeleniumDataDriven\SeleniumDataDriven-main\FaceBook_POM_DataDrivenFramework-main\PageObjectModel\src\main\resources\repository\StatusPics.jpg")
+Sleep(3000)
+ControlClick("Open","","Button1")

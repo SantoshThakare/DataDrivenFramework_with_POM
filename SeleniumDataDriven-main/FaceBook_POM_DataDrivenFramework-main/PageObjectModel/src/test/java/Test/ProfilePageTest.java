@@ -11,6 +11,8 @@ import org.testng.annotations.Test;
 import Log4j.log4j_pattern_layout;
 import Utility.utility;
 import base.Base;
+import pages.FBHomePage;
+import pages.LoginPage;
 import pages.ProfilePage;
 
 @Listeners(Utility.Listener.class)
@@ -36,8 +38,10 @@ public class ProfilePageTest extends Base {
 	/**
 	 * To upload profile picture in facebook
 	 */
-	@Test
+	@Test(priority = 1)
 	public void UploadProfileImage() {
+		loginp = new LoginPage();
+		loginp.LoginUserUsingXlsx();
 		profile = new ProfilePage();
 		profile.uploadUserProfileImage();
 
@@ -45,6 +49,53 @@ public class ProfilePageTest extends Base {
 		assertEquals(homePageTitle, "Santosh Thakare | Facebook");
 	}
 
+	/**
+	 * To post Comment in facebook
+	 *
+	 */
+	@Test(priority = 2)
+	public void CommentPost() throws Exception {
+
+		log.info("* Start case Comment Post   *");
+		loginp = new LoginPage();
+		loginp.LoginUserUsingXlsx();
+		profile = new ProfilePage();
+		profile.userHomePageCommentPost();
+		String homePageTitle = profile.verifyHomePage();
+		assertEquals(homePageTitle, "Santosh Thakare | Facebook");
+	}
+	/**
+	 * To post Randomly Comment in facebook
+	 *
+	 */
+	@Test(priority = 3)
+	public void RandomCommentPost() throws Exception {
+
+		log.info("* Start case Random Comment Post   *");
+		loginp = new LoginPage();
+		loginp.LoginUserUsingXlsx();
+		profile = new ProfilePage();
+		profile.userHomePageRandomCommentPost();
+		
+	}
+	
+	/**
+	 * To like post in facebook
+	 * @throws Exception
+	 *
+	 */
+
+	@Test(priority = 4)
+	public void likePost() throws Exception {
+
+		log.info("* Start case like Post   *");
+		loginp = new LoginPage();
+		loginp.LoginUserUsingXlsx();
+		profile = new ProfilePage();
+		profile.userHomePageLikePost();
+		
+	}
+	
 	/**
 	 * To Run Terminate method after running each Testcases
 	 */
