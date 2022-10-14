@@ -222,7 +222,6 @@ public class utility extends Base {
 		System.out.println(PostTime);
 		return PostTime;
 	}
-	
 	/**
 	 * To verify Assertion Comment Post in Facebook
 	 */
