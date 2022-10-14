@@ -15,6 +15,7 @@ import org.apache.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
@@ -26,8 +27,7 @@ import base.Base;
 
 public class utility extends Base {
 
-    final static Logger log = Logger.getLogger(utility.class);
-
+	final static Logger log = Logger.getLogger(utility.class);
 
 	/**
 	 * To Initialize the WebDriver
@@ -36,20 +36,20 @@ public class utility extends Base {
 		try {
 
 			if (browser.equals("chrome")) {
-				
-				//Create a map to store  preferences 
+
+				// Create a map to store preferences
 				Map<String, Object> prefs = new HashMap<String, Object>();
-				    
-				//add key and value to map as follow to switch off browser notification
-				//Pass the argument 1 to allow and 2 to block
+
+				// add key and value to map as follow to switch off browser notification
+				// Pass the argument 1 to allow and 2 to block
 				prefs.put("profile.default_content_setting_values.notifications", 2);
-				    
-				//Create an instance of ChromeOptions 
+
+				// Create an instance of ChromeOptions
 				ChromeOptions options = new ChromeOptions();
-				    
-				// set ExperimentalOption - prefs 
+
+				// set ExperimentalOption - prefs
 				options.setExperimentalOption("prefs", prefs);
-				    
+
 				driver = new ChromeDriver(options);
 				driver.manage().deleteAllCookies();
 				driver.manage().window().maximize();
@@ -57,8 +57,7 @@ public class utility extends Base {
 				driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 				driver.get(prop.getProperty("baseURL"));
 
-			}
-				else if (browser.equals("opera")) {
+			} else if (browser.equals("opera")) {
 				driver = new OperaDriver();
 				driver.manage().window().maximize();
 				driver.manage().deleteAllCookies();
@@ -133,24 +132,114 @@ public class utility extends Base {
 		try {
 			log.info("start capturing Screenshort");
 
-		Date dates=new Date();
-		String date0=dates.toString();
-		System.out.println("Date is:" +date0);
-		String date1=date0.replaceAll(":", "_");
-		TakesScreenshot ts=(TakesScreenshot) driver;
+			Date dates = new Date();
+			String date0 = dates.toString();
+			System.out.println("Date is:" + date0);
+			String date1 = date0.replaceAll(":", "_");
+			TakesScreenshot ts = (TakesScreenshot) driver;
 
-		File srcFile=ts.getScreenshotAs(OutputType.FILE);
-		File destFile=new File(".//Screenshot/"+ date1 +"FailurePage.png");
+			File srcFile = ts.getScreenshotAs(OutputType.FILE);
+			File destFile = new File(".//Screenshot/" + date1 + "FailurePage.png");
 
-		FileUtils.copyFile(srcFile, destFile);
-	}
-		catch (Exception e){
+			FileUtils.copyFile(srcFile, destFile);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
+	/**
+	 * To verify Assertion Homepagetitle
+	 */
+	public static String verifyHomePage() {
+		String homePageTitle = driver.getTitle();
+		return homePageTitle;
+	}
+
+	/**
+	 * To verify Assertion PostProfileImagePage
+	 * 
+	 * @throws InterruptedException
+	 */
+	public static String verifyProfileImagePostPage() throws InterruptedException {
+
+		WebElement pt = driver.findElement(By.xpath("(//a[@aria-label='1 m'])[1]"));
+		int x = pt.getLocation().getX();
+		int y = pt.getLocation().getY();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(" + x + ", " + y + ")");
+
+		String PostTime = pt.getText();
+
+		System.out.println(PostTime);
+		return PostTime;
+	}
+
+	/**
+	 * To verify Assertion PostImagePage
+	 */
+	public static String verifyImagePostPage() {
+
+		WebElement pt = driver.findElement(By.xpath("(//a[@aria-label='1 m'])[1]"));
+		int x = pt.getLocation().getX();
+		int y = pt.getLocation().getY();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(" + x + ", " + y + ")");
+
+		String PostTime = pt.getText();
+
+		System.out.println(PostTime);
+		return PostTime;
+	}
+
+	/**
+	 * To verify Assertion Post Video in Facebook
+	 */
+	public static String verifyVideoPage() {
+		WebElement pt = driver.findElement(By.xpath("(//a[@aria-label='1 m'])[1]"));
+		int x = pt.getLocation().getX();
+		int y = pt.getLocation().getY();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(" + x + ", " + y + ")");
+
+		String PostTime = pt.getText();
+
+		System.out.println(PostTime);
+		return PostTime;
+	}
+
+	/**
+	 * To verify Assertion Random Comment page in Facebook
+	 */
+	public static String verifyRandomCommentPage() {
+		WebElement pt = driver.findElement(By.xpath("//span[normalize-space()='1 m']"));
+		int x = pt.getLocation().getX();
+		int y = pt.getLocation().getY();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(" + x + ", " + y + ")");
+
+		String PostTime = pt.getText();
+
+		System.out.println(PostTime);
+		return PostTime;
+	}
 	
-		
-	 // Method To Run Terminate method after running each Testcases
+	/**
+	 * To verify Assertion Comment Post in Facebook
+	 */
+	public static String verifyCommentPage() {
+		WebElement pt = driver.findElement(By.xpath("(//span[normalize-space()='1 m'])[1]"));
+		int x = pt.getLocation().getX();
+		int y = pt.getLocation().getY();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(" + x + ", " + y + ")");
+
+		String PostTime = pt.getText();
+
+		System.out.println(PostTime);
+		return PostTime;
+	}
+	
+	// Method To Run Terminate method after running each Testcases
 
 	public static void closedriver() {
 
