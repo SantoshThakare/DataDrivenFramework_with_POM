@@ -44,7 +44,6 @@ public class Base {
 		WebDriverManager.chromedriver().setup();
 	}
 
-
 	protected final static String FILE_PATH = System.getProperty("user.dir") + File.separator + "src" + File.separator
 			+ "main" + File.separator + "resources" + File.separator + "repository" + File.separator
 			+ "LoginTestData.xlsx";
@@ -52,7 +51,6 @@ public class Base {
 	/**
 	 *  To Load the Properties file in file.io
 	 */
-
 	public Base() {
 		try {
 			prop = new Properties();
