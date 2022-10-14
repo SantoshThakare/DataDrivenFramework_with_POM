@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import Log4j.log4j_pattern_layout;
 import Utility.utility;
 import base.Base;
+import pages.LoginPage;
 import pages.MarketPlacePage;
 
 @Listeners(Utility.Listener.class)
@@ -36,15 +37,16 @@ public class MarketPlaceTest extends Base{
 		}
 	}
 //	Method to Use  MarketPlace Page
-
+	
 	@Test
 	public void MarketPlacePost() {
 
 		log.info("* Start case Market Place Page *");
-
+		loginp = new LoginPage();
+		loginp.LoginUserUsingXlsx();
 		marketplace = new MarketPlacePage();
 		marketplace.userMarketPlace();
-		String homePageTitle = marketplace.verifyHomePage();
+		String homePageTitle = util.verifyHomePage();
 		assertEquals(homePageTitle, "Facebook Marketplace | Facebook");
 
 	}

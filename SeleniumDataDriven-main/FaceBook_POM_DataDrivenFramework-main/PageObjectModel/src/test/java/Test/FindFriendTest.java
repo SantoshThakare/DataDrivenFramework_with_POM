@@ -34,7 +34,6 @@ public class FindFriendTest extends Base{
 		}
 
 	}
-
 //		Method To use Call Find Frind Page
 	@Test
 	public void FriendFindPost() {

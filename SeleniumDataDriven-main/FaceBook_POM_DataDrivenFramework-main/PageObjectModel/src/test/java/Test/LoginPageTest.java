@@ -50,12 +50,10 @@ public class LoginPageTest extends Base {
 
 		loginp = new LoginPage();
 		loginp.LoginUser();
-		String homePageTitle = loginp.verifyHomePage();
+		String homePageTitle = util.verifyHomePage();
 		assertEquals(homePageTitle, "Facebook");
 
 	}
-
-
 	/**
 	 *	To Test Login Page is working or not using XLSX file
 	 */
@@ -68,7 +66,7 @@ public class LoginPageTest extends Base {
 		loginp = new LoginPage();
 		loginp.LoginUserUsingXlsx();
 
-		String homePageTitle = loginp.verifyHomePage();
+		String homePageTitle = util.verifyHomePage();
 		assertEquals(homePageTitle, "Facebook");
 
 	}

@@ -45,10 +45,9 @@ public class ProfilePageTest extends Base {
 		profile = new ProfilePage();
 		profile.uploadUserProfileImage();
 
-		String homePageTitle = profile.verifyHomePage();
+		String homePageTitle = util.verifyHomePage();
 		assertEquals(homePageTitle, "Santosh Thakare | Facebook");
 	}
-
 	/**
 	 * To post Comment in facebook
 	 *
@@ -61,7 +60,7 @@ public class ProfilePageTest extends Base {
 		loginp.LoginUserUsingXlsx();
 		profile = new ProfilePage();
 		profile.userHomePageCommentPost();
-		String homePageTitle = profile.verifyHomePage();
+		String homePageTitle = util.verifyHomePage();
 		assertEquals(homePageTitle, "Santosh Thakare | Facebook");
 	}
 	/**

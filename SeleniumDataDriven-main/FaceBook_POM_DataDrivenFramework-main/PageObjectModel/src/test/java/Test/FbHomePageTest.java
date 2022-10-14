@@ -16,7 +16,6 @@ import base.Base;
 import pages.FBHomePage;
 import pages.LoginPage;
 
-
 @Listeners(Utility.Listener.class)
 public class FbHomePageTest extends Base {
 	public FbHomePageTest() {
@@ -24,6 +23,7 @@ public class FbHomePageTest extends Base {
 	}
 
 	final static Logger log = Logger.getLogger(log4j_pattern_layout.class);
+
 	/**
 	 * To Run Initialize method before running each Testcases
 	 */
@@ -52,11 +52,11 @@ public class FbHomePageTest extends Base {
 		loginp.LoginUserUsingXlsx();
 		FBhome = new FBHomePage();
 		FBhome.userFindFriend();
-		String homePageTitle = FBhome.verifyHomePage();
-		AssertJUnit.assertEquals(homePageTitle, "Friends | Facebook");
-
+		String homePageTitle = util.verifyHomePage();
+		AssertJUnit.assertEquals(homePageTitle, "Suggestions | Facebook");
 
 	}
+
 	/**
 	 * To post MarketPlace in facebook
 	 *
@@ -69,10 +69,11 @@ public class FbHomePageTest extends Base {
 		loginp.LoginUserUsingXlsx();
 		FBhome = new FBHomePage();
 		FBhome.userMarketPlace();
-		String homePageTitle = FBhome.verifyHomePage();
+		String homePageTitle = util.verifyHomePage();
 		AssertJUnit.assertEquals(homePageTitle, "Facebook Marketplace | Facebook");
 
 	}
+
 	/**
 	 * To post watch video in facebook
 	 *
@@ -85,13 +86,14 @@ public class FbHomePageTest extends Base {
 		loginp.LoginUserUsingXlsx();
 		FBhome = new FBHomePage();
 		FBhome.userWatchVideos();
-		String homePageTitle = FBhome.verifyHomePage();
+		String homePageTitle = util.verifyHomePage();
 		AssertJUnit.assertEquals(homePageTitle, "Watch | Facebook");
 	}
 
 	/**
 	 * To upload profile picture in facebook
-	 * @throws InterruptedException 
+	 * 
+	 * @throws InterruptedException
 	 */
 	@Test(priority = 4)
 	public void UploadProfileImage() throws InterruptedException {
@@ -101,8 +103,8 @@ public class FbHomePageTest extends Base {
 		loginp.LoginUserUsingXlsx();
 		FBhome = new FBHomePage();
 		FBhome.uploadUserProfileImage();
-		String PostTime = FBhome.verifyProfileImagePostPage();
-		
+		String PostTime = util.verifyProfileImagePostPage();
+
 		System.out.println("posting time  :" + PostTime);
 		AssertJUnit.assertEquals(PostTime, "1 m");
 	}
@@ -118,50 +120,50 @@ public class FbHomePageTest extends Base {
 		loginp = new LoginPage();
 		loginp.LoginUserUsingXlsx();
 		FBhome = new FBHomePage();
-		FBhome.userHomepageImagePost();	
-		
-		String PostTime = FBhome.verifyImagePostPage();
+		FBhome.userHomepageImagePost();
+
+		String PostTime = util.verifyImagePostPage();
 		System.out.println("posting time :" + PostTime);
 		AssertJUnit.assertEquals(PostTime, "1 m");
 		log.info("*End case Upload Image");
 
 	}
-	
 
+	/**
+	 * To post Randomly Comment in facebook
+	 *
+	 */
 	@Test(priority = 6)
-	public void uploadVideoPost() {
-		log.info("* Start case Upload Profile Video   *");
+	public void RandomCommentPost() throws Exception {
+
+		log.info("* Start case Random Comment Post   *");
 		loginp = new LoginPage();
-		loginp.LoginUserUsingXlsx(); 
+		loginp.LoginUserUsingXlsx();
 		FBhome = new FBHomePage();
-		FBhome.userHomePageVideoPost();
-		String PostTime = FBhome.verifyVideoPage();
-		System.out.println("posting time :" + PostTime);
+		FBhome.userHomePageRandomCommentPost();
+		String PostTime = util.verifyRandomCommentPage();
 		AssertJUnit.assertEquals(PostTime, "1 m");
-
-		log.info("*End case Upload Video");
-
 	}
 
 	/**
 	 * To like post in facebook
-	 * @throws Exception
+	 * @throws InterruptedException 
 	 *
 	 */
 
 	@Test(priority = 7)
-	public void likePost() throws Exception {
-
+	public void likePost() throws InterruptedException {
 		log.info("* Start case like Post *");
 		loginp = new LoginPage();
 		loginp.LoginUserUsingXlsx();
 		FBhome = new FBHomePage();
 		FBhome.userHomePageLikePost();
-		String homePageTitle = FBhome.verifyHomePage();
+		String homePageTitle = util.verifyHomePage();
 		AssertJUnit.assertEquals(homePageTitle, "Santosh Thakare | Facebook");
 		log.info("* End case like Post   *");
 
 	}
+
 	/**
 	 * To post Comment in facebook
 	 *
@@ -174,63 +176,65 @@ public class FbHomePageTest extends Base {
 		loginp.LoginUserUsingXlsx();
 		FBhome = new FBHomePage();
 		FBhome.userHomePageCommentPost();
-		String homePageTitle = FBhome.verifyHomePage();
-		AssertJUnit.assertEquals(homePageTitle, "Santosh Thakare | Facebook");
-	}
-	/**
-	 * To post Randomly Comment in facebook
-	 *
-	 */
-	@Test(priority = 9)
-	public void RandomCommentPost() throws Exception {
-
-		log.info("* Start case Random Comment Post   *");
-		loginp = new LoginPage();
-		loginp.LoginUserUsingXlsx();
-		FBhome = new FBHomePage();
-		FBhome.userHomePageRandomCommentPost();
-		String PostTime = FBhome.verifyRandomCommentPage();
+		String PostTime = util.verifyCommentPage();
+		System.out.println("posting time :" + PostTime);
 		AssertJUnit.assertEquals(PostTime, "1 m");
 	}
+
 //	To post  status image story in facebook
-	@Test(priority = 10)
+	@Test(priority = 9)
 	public void status_image_story_post() throws IOException, InterruptedException {
 		log.info("*Start Test Case Upload Story *");
-		
+
 		loginp = new LoginPage();
 		loginp.LoginUserUsingXlsx();
 		FBhome = new FBHomePage();
 		FBhome.userStatusImage();
-		String homePageTitle = FBhome.verifyHomePage();
+		String homePageTitle = util.verifyHomePage();
 		AssertJUnit.assertEquals(homePageTitle, "Create stories | Facebook");
-				
+
 		log.info("*End Test Case Upload Story*");
 	}
 
 //	To post  status text story in facebook
-	@Test(priority = 11)
+	@Test(priority = 10)
 	public void status_text_story_post() throws IOException, InterruptedException {
 		log.info("*Start Test Case Text Story *");
-		
+
 		loginp = new LoginPage();
 		loginp.LoginUserUsingXlsx();
 		FBhome = new FBHomePage();
 		FBhome.userStatusText();
-		String homePageTitle = FBhome.verifyHomePage();
+		String homePageTitle = util.verifyHomePage();
 		AssertJUnit.assertEquals(homePageTitle, "Facebook");
-				
+
 		log.info("*End Test Case Text Story*");
 	}
-	@Test(priority = 12)
 //	To post text Type in facebook
 
+	@Test(priority = 11)
 	public void text_type_post() {
 		loginp = new LoginPage();
 		loginp.LoginUserUsingXlsx();
 		FBhome = new FBHomePage();
 		FBhome.userTextPost();
-		String homePageTitle = FBhome.verifyHomePage();
-		AssertJUnit.assertEquals(homePageTitle, "Facebook");
+		String PostTime = util.verifyRandomCommentPage();
+		AssertJUnit.assertEquals(PostTime, "1 m");
+	}
+
+	@Test(priority = 12)
+	public void uploadVideoPost() {
+		log.info("* Start case Upload Profile Video   *");
+		loginp = new LoginPage();
+		loginp.LoginUserUsingXlsx();
+		FBhome = new FBHomePage();
+		FBhome.userHomePageVideoPost();
+		String PostTime = util.verifyVideoPage();
+		System.out.println("posting time :" + PostTime);
+		AssertJUnit.assertEquals(PostTime, "1 m");
+
+		log.info("*End case Upload Video");
+
 	}
 
 	/**
@@ -248,6 +252,5 @@ public class FbHomePageTest extends Base {
 			e.printStackTrace();
 		}
 	}
-
 
 }

@@ -44,14 +44,12 @@ public class UploadProfileVideoTest extends Base{
 		loginp.LoginUserUsingXlsx();
 		uploadprofilevideo=new UploadProfileVideoPage();
 		uploadprofilevideo.userHomepageImagePost();
-		String homePageTitle = uploadprofilevideo.verifyHomePage();
+		String homePageTitle = util.verifyHomePage();
 		assertEquals(homePageTitle, "Facebook");
 	}
-
 	/**To post video in facebook
 	 *
 	 */
-
 	@Test(priority = 2)
 	public void uploadVideoPost() {
 		loginp = new LoginPage();
@@ -59,7 +57,7 @@ public class UploadProfileVideoTest extends Base{
 		uploadprofilevideo=new UploadProfileVideoPage();
 		uploadprofilevideo.userHomePageVideoPost();
 		
-		String homePageTitle = uploadprofilevideo.verifyHomePage();
+		String homePageTitle = util.verifyHomePage();
 		assertEquals(homePageTitle, "Facebook");
 
 	}
@@ -76,7 +74,7 @@ public class UploadProfileVideoTest extends Base{
 		loginp.LoginUserUsingXlsx();
 		uploadprofilevideo=new UploadProfileVideoPage();
 		uploadprofilevideo.userHomePageLikePost();
-		String homePageTitle = uploadprofilevideo.verifyHomePage();
+		String homePageTitle = util.verifyHomePage();
 		assertEquals(homePageTitle, "Facebook");
 	}
 

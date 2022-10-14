@@ -21,6 +21,7 @@ public class Browser extends Base {
 
 	static {
 
+		
 		WebDriverManager.chromedriver().setup();
 		WebDriverManager.firefoxdriver().setup();
 	}

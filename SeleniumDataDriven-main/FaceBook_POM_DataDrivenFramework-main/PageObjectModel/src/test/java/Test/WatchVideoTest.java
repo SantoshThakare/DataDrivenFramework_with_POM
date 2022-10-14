@@ -48,14 +48,13 @@ public class WatchVideoTest extends Base{
 
 		watchvideo = new WatchVideosPage();
 		watchvideo.userWatchVideos();
-		String homePageTitle = watchvideo.verifyHomePage();
+		String homePageTitle = util.verifyHomePage();
 		assertEquals(homePageTitle, "Watch | Facebook");
 	}
 
 	/**
 	 * To Run Terminate method after running each Testcases
 	 */
-
 	@SuppressWarnings("static-access")
 	@AfterMethod
 	public void terminateDriver() {

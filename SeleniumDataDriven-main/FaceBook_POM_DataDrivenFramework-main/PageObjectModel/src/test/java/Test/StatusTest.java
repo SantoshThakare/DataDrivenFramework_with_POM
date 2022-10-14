@@ -48,12 +48,11 @@ public class StatusTest extends Base {
 		loginp.LoginUserUsingXlsx();
 		statuspage = new StatusPage();
 		statuspage.userStatusImage();
-		String homePageTitle = statuspage.verifyHomePage();
+		String homePageTitle = util.verifyHomePage();
 		assertEquals(homePageTitle, "Create stories | Facebook");
 				
 		log.info("*End Test Case Upload Story*");
 	}
-
 //	To post  status text story in facebook
 	@Test
 	public void status_text_story_post() throws IOException, InterruptedException {
@@ -63,7 +62,7 @@ public class StatusTest extends Base {
 		loginp.LoginUserUsingXlsx();
 		statuspage = new StatusPage();
 		statuspage.userStatusText();
-		String homePageTitle = statuspage.verifyHomePage();
+		String homePageTitle = util.verifyHomePage();
 		assertEquals(homePageTitle, "Facebook");
 				
 		log.info("*End Test Case Text Story*");
@@ -74,7 +73,7 @@ public class StatusTest extends Base {
 		loginp.LoginUserUsingXlsx();
 		statuspage = new StatusPage();
 		statuspage.userTextPost();
-		String homePageTitle = statuspage.verifyHomePage();
+		String homePageTitle = util.verifyHomePage();
 		assertEquals(homePageTitle, "Facebook");
 	}
 	
