@@ -246,7 +246,6 @@ public class FBHomePage extends LoginPage {
 	 */
 	public void userHomePageVideoPost() {
 		try {
-
 			wait.until(ExpectedConditions.visibilityOfAllElements(homebtn));
 			homebtn.click();
 			wait.until(ExpectedConditions.visibilityOfAllElements(photovideobtn));
