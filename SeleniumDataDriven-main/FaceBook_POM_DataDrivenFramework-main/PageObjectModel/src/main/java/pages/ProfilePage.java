@@ -164,7 +164,6 @@ public class ProfilePage extends LoginPage{
 				js.executeScript("window.scrollBy(0, 0)");
 				Thread.sleep(2000);
 			}
-
 			wait.until(ExpectedConditions.elementToBeClickable(commentbox));
 			commentbox.sendKeys(randomString);
 

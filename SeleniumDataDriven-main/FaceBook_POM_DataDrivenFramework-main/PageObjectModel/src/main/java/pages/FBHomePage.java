@@ -65,10 +65,10 @@ public class FBHomePage extends LoginPage {
 	@FindBy(xpath = "//div[@aria-label='Write a comment']")
 	WebElement commentbox;
 	
-	@FindBy(xpath = "//div[@aria-label=\"Reply by Santosh Thakare to Santosh Thakare's comment a few seconds ago\"]//div[@role='button'][normalize-space()='Reply']")
+	@FindBy(xpath = "//div[@aria-label='Comment by Santosh Thakare a few seconds ago']//div[@role='button'][normalize-space()='Reply']")
 	WebElement replybtn;
 	
-	@FindBy(xpath = "//div[@aria-label='Reply to Santosh Thakare']//p[@class='x1mh8g0r xat24cr x11i5rnm xdj266r']")
+	@FindBy(xpath = "//div[@aria-label='Reply to Santosh Thakare']")
 	WebElement replyTextbtn;
 
 	@FindBy(xpath = "(//span[contains(text(),'Like')])[1]")
@@ -256,16 +256,17 @@ public class FBHomePage extends LoginPage {
 					.exec(System.getProperty("user.dir") + ".\\src\\main\\resources\\repository\\AutoProfileVideo.exe")
 					.waitFor(50, TimeUnit.SECONDS);
 			wait.until(ExpectedConditions.visibilityOfAllElements(postbtn));
-			wait.until(ExpectedConditions.elementToBeClickable(postbtn));
+			Thread.sleep(5000);
 			postbtn.click();
 			Thread.sleep(5000);
 			driver.navigate().to("https://www.facebook.com/profile.php?id=100086515231415");
 			Thread.sleep(2000);
 
+			
 //			wait.until(ExpectedConditions.visibilityOfAllElements(postingbtn));
 //			postingbtn.click();
 			
-			driver.navigate().refresh();
+//			driver.navigate().refresh();
 
 		} catch (Exception e) {
 
@@ -344,12 +345,15 @@ public class FBHomePage extends LoginPage {
 
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
-			wait.until(ExpectedConditions.visibilityOfAllElements(replybtn));
-			replybtn.click();
-			wait.until(ExpectedConditions.elementToBeClickable(replyTextbtn));
-			commentbox.sendKeys("Thank You Dost!!!!");
+//			wait.until(ExpectedConditions.visibilityOfAllElements(replybtn));
+//			replybtn.click();
+//			wait.until(ExpectedConditions.elementToBeClickable(replyTextbtn));
+//			commentbox.sendKeys("Thank You Dost!!!!");
+//			robot.keyPress(KeyEvent.VK_ENTER);
+//			robot.keyRelease(KeyEvent.VK_ENTER);
 			
-			
+			driver.navigate().refresh();
+
 		} catch (AWTException e) {
 			e.printStackTrace();
 		}
@@ -410,10 +414,11 @@ public class FBHomePage extends LoginPage {
 		wait.until(ExpectedConditions.visibilityOfAllElements(createPhotostorybtn));
 		createPhotostorybtn.click();
 		Runtime.getRuntime().exec(".\\src\\main\\resources\\repository\\Auto_Status.exe");
-		wait.until(ExpectedConditions.visibilityOfAllElements(shareStorybtn));
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(shareStorybtn));
+		Thread.sleep(1000);
 		shareStorybtn.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 
 	}
 
@@ -446,7 +451,7 @@ public class FBHomePage extends LoginPage {
 		wait.until(ExpectedConditions.visibilityOfAllElements(TextTypePostbtn));
 		TextTypePostbtn.click();
 		wait.until(ExpectedConditions.elementToBeClickable(TextTypePostbtn));
-		TextTypePostbtn.sendKeys("To success in life... You need two things... Ignorance and Confidence...");
+		TextTypePostbtn.sendKeys("To success in life.... You need two things... Ignorance and Confidence...");
 
 		wait.until(ExpectedConditions.visibilityOfAllElements(postbtn));
 		postbtn.click();

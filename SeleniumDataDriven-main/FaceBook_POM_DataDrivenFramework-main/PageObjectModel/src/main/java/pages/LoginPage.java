@@ -128,7 +128,6 @@ public class LoginPage extends Base {
 	 */
 	public String verifyImagePostPage() {
 
-
 		WebElement pt  = driver.findElement(By.xpath("//a[@aria-label='1 m']"));
 		int x = pt.getLocation().getX();
 		int y = pt.getLocation().getY();
@@ -159,7 +158,7 @@ public class LoginPage extends Base {
 	 * To verify Random Comment page  in Facebook
 	 */
 	public String verifyRandomCommentPage() {
-		WebElement pt  = driver.findElement(By.xpath("div[aria-label='Comment by Santosh Thakare a few seconds ago'] ul[class='x1n0m28w x1rg5ohu x1wfe3co xat24cr xsgj6o6 x1o1nzlu xyqdw3p'] span[class='x4k7w5x x1h91t0o x1h9r5lt x1jfb8zj xv2umb2 x1beo9mf xaigb6o x12ejxvf x3igimt xarpa2k xedcshv x1lytzrv x1t2pt76 x7ja8zs x1qrby5j']"));
+		WebElement pt  = driver.findElement(By.xpath("//span[normalize-space()='1 m']"));
 		int x = pt.getLocation().getX();
 		int y = pt.getLocation().getY();
 		JavascriptExecutor js = (JavascriptExecutor) driver;

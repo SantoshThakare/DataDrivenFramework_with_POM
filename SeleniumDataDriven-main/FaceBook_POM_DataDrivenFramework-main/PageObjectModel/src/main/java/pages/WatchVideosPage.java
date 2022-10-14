@@ -37,8 +37,7 @@ public class WatchVideosPage extends LoginPage  {
 			}
 			wait.until(ExpectedConditions.visibilityOfAllElements(clickwatchbtn));
 
-			clickwatchbtn.click();
-			
+			clickwatchbtn.click();			
 			Thread.sleep(1000);
 			wait.until(ExpectedConditions.elementToBeSelected(homebtn));
 

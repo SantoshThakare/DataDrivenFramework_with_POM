@@ -21,7 +21,6 @@ public class FindFriendPage extends LoginPage {
 	 */
 	public void userFindFriend() {
 		try {
-
 			wait.until(ExpectedConditions.visibilityOfAllElements(homebtn));
 			homebtn.click();
 			wait.until(ExpectedConditions.visibilityOfAllElements(findfriedbtn));

@@ -38,6 +38,7 @@ public class StatusPage extends LoginPage {
 	@FindBy(xpath ="//div[@aria-label='Reels tray']")
 	WebElement ReelsTraybtn;
 	
+	
 //	 To Post Status Image in Facebook
 	public void userStatusImage() throws IOException, InterruptedException {
 		

@@ -74,7 +74,6 @@ public class UploadProfileVideoPage extends LoginPage {
 			wait.until(ExpectedConditions.elementToBeClickable(postbtn));
 
 			postbtn.click();
-
 			
 		} catch (Exception e) {
 

@@ -16,7 +16,6 @@ public class MarketPlacePage extends LoginPage{
 	 */
 	public void userMarketPlace() {
 		try {
-
 			wait.until(ExpectedConditions.visibilityOfAllElements(marketplacebtnbtn));
 			marketplacebtnbtn.click();
 
